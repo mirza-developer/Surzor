@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Features\Answers\**" />
+    <Compile Remove="Features\Options\**" />
+    <Compile Remove="Features\Questions\**" />
+    <EmbeddedResource Remove="Features\Answers\**" />
+    <EmbeddedResource Remove="Features\Options\**" />
+    <EmbeddedResource Remove="Features\Questions\**" />
+    <None Remove="Features\Answers\**" />
+    <None Remove="Features\Options\**" />
+    <None Remove="Features\Questions\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Contracts\Persistence\Repositories\IAnswerRepository.cs" />
+    <Compile Remove="Contracts\Persistence\Repositories\IOptionRepository.cs" />
+    <Compile Remove="Contracts\Persistence\Repositories\IQuestionRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="FluentValidation" Version="9.5.3" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="9.5.3" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Surzor.Domain\Surzor.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

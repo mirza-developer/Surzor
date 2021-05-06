@@ -1,0 +1,40 @@
+﻿@page "/responder"
+@using Surzor.App.ViewModels
+<h3>List of Responders</h3>
+
+@if (Responders is null)
+{
+    <p>please wait ..</p>
+}
+else
+{
+    <a class="btn btn-info" href="/responder/create">Create</a>
+    <table class="table table-bordered">
+        <thead class="bg-primary">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Mail
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <Virtualize Items="@Responders" Context="responder">
+                <tr>
+                    <td>@responder.Name</td>
+                    <td>@responder.Mail</td>
+                    <td>
+                        <a class="btn btn-primary" href="/responder/details?mail=@responder.Mail">Details</a>
+                    </td>
+                </tr>
+            </Virtualize>
+        </tbody>
+    </table>
+} 
+
+

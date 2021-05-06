@@ -1,0 +1,23 @@
+﻿@page "/account/login"
+
+<div class="row col-md-10">
+    <EditForm Model="@LoginViewModel" OnValidSubmit="HandleValidSubmit">
+        <div class="form-group">
+            <label class="" For="@LoginViewModel.Username">Username :</label>
+            <InputText class="form-control" @bind-value="LoginViewModel.Username"
+                       ValueExpression="@(() =>LoginViewModel.Username )"    ></InputText>
+        </div>
+        <div class="form-group">
+            <label class="" For="@LoginViewModel.Password">Password :</label>
+            <InputText type="password" class="form-control" @bind-value="LoginViewModel.Password"
+                       ValueExpression="@(() =>LoginViewModel.Password )"></InputText>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">submit</button>
+        </div>
+        
+        <div class="bg-info">
+            @Message
+        </div>
+    </EditForm>
+</div>
