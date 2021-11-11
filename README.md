@@ -1,4 +1,4 @@
-# Surzor
+# Surzor (Migrated to .net6)
 A sample for Blazor web assembly and Asp.net core web-api using:
 
 1- Clean architecture
